@@ -15,4 +15,8 @@ func main() {
 	result = sort_algorithm.SelectionSort(numbers)
 	fmt.Printf("Selection Sort: %v \n", result)
 	fmt.Println("------------------------")
+
+	result = sort_algorithm.InsertSort(numbers)
+	fmt.Printf("Insert Sort: %v \n", result)
+	fmt.Println("------------------------")
 }

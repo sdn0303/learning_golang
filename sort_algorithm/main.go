@@ -1,8 +1,8 @@
 package sort_algorithm
 
 func BubbleSort(numbers []int) []int {
-	for i := 0; i < len(numbers) -1; i++ {
-		for j := 0; j < len(numbers) - i - 1; j++ {
+	for i := 0; i < len(numbers); i++ {
+		for j := 0; j < len(numbers)-i-1; j++ {
 			if numbers[j] > numbers[j+1] {
 				numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
 			}
@@ -22,7 +22,20 @@ func SelectionSort(numbers []int) []int {
 			}
 			return
 		}(numbers[idx:len(numbers)])
-		numbers[idx], numbers[idx + min] = numbers[idx + min], numbers[idx]
+		numbers[idx], numbers[idx+min] = numbers[idx+min], numbers[idx]
+	}
+	return numbers
+}
+
+func InsertSort(numbers []int) []int {
+	for i := 0; i < len(numbers); i++ {
+		for j := 0; j < len(numbers)-i-1; j++ {
+			if numbers[j] > numbers[j+1] {
+				numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+			} else {
+				break
+			}
+		}
 	}
 	return numbers
 }
